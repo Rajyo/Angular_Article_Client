@@ -1,0 +1,16 @@
+<div class="p-3 bg-black text-white sticky top-0">
+    <nav class="flex justify-between">
+        <a class="px-4 text-lg" [routerLink]="'/home'">Home</a>
+
+        <span *ngIf="token" class="flex justify-around flex-wrap">
+            <a class="px-4 text-lg" [routerLink]="'add-article'">Add Article</a>
+            <a class="px-4 text-lg" [routerLink]="'profile'">Profile</a>
+            <button class="px-4 text-lg" type="button" (click)="logout()">Logout</button>
+        </span>
+
+        <span *ngIf="!token" class="flex justify-around flex-wrap">
+            <a class="px-4 text-lg" [routerLink]="'login'">Login</a>
+            <a class="px-4 text-lg" [routerLink]="'register'">Register</a>
+        </span>
+    </nav>
+</div>

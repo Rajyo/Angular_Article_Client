@@ -1,0 +1,35 @@
+<div class="my-[12vh]">
+  <form class="mx-6 sm:w-96 sm:m-auto" (ngSubmit)="submitLogin($event)">
+    <h1 class="text-4xl font-bold text-center py-10">Login</h1>
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label><span class="text-red-500 font-bold ml-0.5">*</span>
+      <input type="email" name="email" [(ngModel)]="loginUser.email" class="form-control" id="exampleInputEmail1"
+        aria-describedby="emailHelp">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label><span class="text-red-500 font-bold ml-0.5">*</span>
+      <input type="password" name="password" [(ngModel)]="loginUser.password" class="form-control"
+        id="exampleInputPassword1">
+    </div>
+
+    <button type="submit" class="btn btn-primary bg-blue-500 w-full my-4">Submit</button>
+
+  </form>
+</div>
+
+<!-- <button type="button" class="bg-red-500 text-white p-2 rounded-md" (click)="getUsers()">Get Users</button> -->
+
+<!-- <div *ngFor="let user of users">
+    {{user._id}}
+    {{user.age}}
+    {{user.email}}
+    {{user.nationality}}
+    {{user.username}}
+</div>
+
+<div class="mt-10">
+    {{login.token}}
+    {{login.userId}}
+</div> -->

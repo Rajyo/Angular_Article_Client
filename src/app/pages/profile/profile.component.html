@@ -1,0 +1,46 @@
+<section class='mt-12 sm:mt-20 sm:m-8 md:m-10'>
+    <h3 class="my-4 text-center text-2xl sm:text-3xl lg:text-5xl font-bold uppercase ">My Profile</h3>
+    <p class="text-center sm:mx-28 md:mx-40 lg:mx-60 px-4">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit,
+      error amet numquam iure provident voluptate esse quasi, veritatis
+      totam voluptas nostrum quisquam eum porro a pariatur veniam.
+    </p>
+  </section>
+
+  <div class='max-w-[95%] md:max-w-[90%] lg:max-w-[85%] m-auto mb-10 md:mb-28 mt-6'>
+    <section class='grid sm:grid-cols-2 gap-6'>
+      <div class='m-auto '>
+        <img src="../../../assets/user-icon.png" alt="profile" class="w-80 h-80" />
+      </div>
+
+      <form class='p-4 flex flex-col gap-4 sm:gap-0 m-auto sm:m-0' (ngSubmit)="submitUpdateUser($event)">
+
+        <div class='flex flex-col'>
+          <span class="text-gray-500">Email</span>
+          <input class="pl-2 border border-gray-300 py-2 mt-1 rounded-md max-[350px]:w-48 w-72 md:w-80" type='text' value={{user.email}} disabled />
+        </div>
+
+        <div class='flex flex-col'>
+          <span class="text-gray-500">Name</span>
+          <input class="pl-2 border border-gray-300 py-2 mt-1 rounded-md max-[350px]:w-48 w-72 md:w-80" type='text' value={{user.name}} name="newName" [(ngModel)]="name" (input)="sendNewNameValue($event)" />
+        </div>
+        
+        <div class='flex flex-col'>
+          <span class="text-gray-500">Username</span>
+          <input class="pl-2 border border-gray-300 py-2 mt-1 rounded-md max-[350px]:w-48 w-72 md:w-80" type='text' value={{user.username}} name="newUsername" [(ngModel)]="username" (input)="sendNewUserameValue($event)" />
+        </div>
+
+        <div class='flex flex-col'>
+          <span class="text-gray-500">Password</span>
+          <input class="pl-2 border border-gray-300 py-2 mt-1 rounded-md max-[350px]:w-48 w-72 md:w-80" type='password' value='' name="newPassword" [(ngModel)]="password" (input)="sendNewPasswordValue($event)" />
+        </div>
+
+        <div *ngIf="valueChange == true">
+          <button type="submit" class='max-[350px]:w-48 w-72 md:w-80 rounded-md py-2 mt-6 bg-green-500 text-white'>Submit</button>
+        </div>
+        
+
+      </form>
+
+    </section>
+  </div>
