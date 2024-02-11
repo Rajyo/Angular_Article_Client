@@ -4,6 +4,7 @@
 
         <span *ngIf="token" class="flex justify-around flex-wrap">
             <a class="px-4 text-lg" [routerLink]="'add-article'">Add Article</a>
+            <a class="px-4 text-lg" [routerLink]="'my-articles'">My Articles</a>
             <a class="px-4 text-lg" [routerLink]="'profile'">Profile</a>
             <button class="px-4 text-lg" type="button" (click)="logout()">Logout</button>
         </span>

@@ -46,10 +46,8 @@ export class ProfileComponent implements OnInit {
   }
   
   username: string = ''
-  usernameChange: boolean = false
   sendNewUserameValue(event: any) {
     this.valueChange = true
-    this.usernameChange = true
     this.updateUser.newUsername = event.target.value;
     if(this.updateUser.newUsername == this.user.username){
       this.valueChange = false
@@ -57,10 +55,8 @@ export class ProfileComponent implements OnInit {
   }
   
   name: string = ''
-  nameChange: boolean = false
   sendNewNameValue(event: any) {
     this.valueChange = true
-    this.nameChange = true
     this.updateUser.newName = event.target.value;
     if(this.updateUser.newName == this.user.name){
       this.valueChange = false
@@ -72,6 +68,11 @@ export class ProfileComponent implements OnInit {
   constructor(private apollo: Apollo) { }
 
   ngOnInit(): void {
+
+    if(!localStorage.getItem("useId")){
+      window.location.href = '/login'
+    }
+
     this.apollo.watchQuery<any>({
       query: GET_USER,
       variables: {
@@ -112,6 +113,7 @@ export class ProfileComponent implements OnInit {
         if (this.updateUser.newPassword.length < 6) {
           alert("Password should be more than 6 words")
           this.valueChange = false
+          this.password = ''
           return
         }
       }

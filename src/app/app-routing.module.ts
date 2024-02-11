@@ -4,6 +4,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { MyArticlesComponent } from './pages/my-articles/my-articles.component';
+import { AddArticleComponent } from './pages/add-article/add-article.component';
 
 const routes: Routes = [
   {
@@ -18,6 +20,12 @@ const routes: Routes = [
   },
   {
     path: "profile", component: ProfileComponent, title: "Profile"
+  },
+  {
+    path: "my-articles", component: MyArticlesComponent, title: "My Articles"
+  },
+  {
+    path: "add-article", component: AddArticleComponent, title: "Add Article"
   },
 ];
 

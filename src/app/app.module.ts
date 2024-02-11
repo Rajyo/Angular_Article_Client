@@ -15,6 +15,7 @@ import { GraphQLModule } from './graphql.module';
 import { AddArticleComponent } from './pages/add-article/add-article.component';
 import { UpdateArticleComponent } from './pages/update-article/update-article.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { MyArticlesComponent } from './pages/my-articles/my-articles.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
     AddArticleComponent,
     UpdateArticleComponent,
     ProfileComponent,
+    MyArticlesComponent,
   ],
   imports: [
     BrowserModule,

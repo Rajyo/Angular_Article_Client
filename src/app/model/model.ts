@@ -41,6 +41,7 @@ export type ArticleData = {
     author: {
         username: string
         name: string
+        _id: string
     },
     title: string,
     description: string,
