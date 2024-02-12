@@ -1,19 +1,19 @@
-<main class="max-w-[90%] py-4 mx-auto">
+<main class="sm:max-w-[90%] py-4 mx-auto">
     <h1 class="text-4xl py-2 font-bold text-center">My Articles</h1>
     <p class="max-w-[60%] m-auto text-center pt-2 pb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit.
         Recusandae, doloribus ipsa quo modi deleniti expedita et autem totam esse tempore delectus magni veritatis, iste
         quam, amet perferendis voluptatem at officia.</p>
 
-    <section class="m-4 grid grid-cols-3 gap-10" *ngIf="articles.length > 0">
+    <section class="m-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-10" *ngIf="articles.length > 0">
         <div class="rounded-md shadow-md shadow-gray-400" *ngFor="let article of articles">
 
             <div class="flex bg-[#3cb371] p-3 rounded-t-md  justify-between">
 
-                <div class="flex">
+                <div class="flex flex-wrap">
                     <img src="../../../assets/user-icon.png" class="w-12 h-12" alt="cover">
                     <div class="ml-3">
-                        <p class="text-white font-semibold">{{article.author.name}}</p>
-                        <p class="text-white font-semibold">&#64;{{article.author.username}}</p>
+                        <p class="text-white font-semibold break-words">{{article.author.name}}</p>
+                        <p class="text-white font-semibold break-words">&#64;{{article.author.username}}</p>
                     </div>
                 </div>
                 <div class="text-white flex flex-col gap-2">
@@ -24,7 +24,7 @@
 
             </div>
             <div class="p-3 rounded-b-md">
-                <p class="font-bold text-lg">{{article.title}}</p>
+                <p class="font-bold text-lg break-words">{{article.title}}</p>
                 <p class="text-gray-600 text-sm break-words">{{article.description}}</p>
             </div>
         </div>

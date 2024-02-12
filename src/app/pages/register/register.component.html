@@ -6,14 +6,14 @@
         <div class="mb-3">
             <label for="exampleInputName" class="form-label">Name</label><span
                 class="text-red-500 font-bold ml-0.5">*</span>
-            <input type="name" name="name" [(ngModel)]="registerUser.name" class="form-control" id="exampleInputName">
+            <input type="name" name="name" [(ngModel)]="registerUser.name" class="form-control" id="exampleInputName" maxlength="10">
         </div>
 
         <div class="mb-3">
             <label for="exampleInputUsername" class="form-label">Username</label><span
                 class="text-red-500 font-bold ml-0.5">*</span>
             <input type="username" name="username" [(ngModel)]="registerUser.username" class="form-control"
-                id="exampleInputUsername">
+                id="exampleInputUsername" maxlength="10">
         </div>
 
         <div class="mb-3">

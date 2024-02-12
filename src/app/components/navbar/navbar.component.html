@@ -1,17 +1,28 @@
 <div class="p-3 bg-black text-white sticky top-0">
     <nav class="flex justify-between">
-        <a class="px-4 text-lg" [routerLink]="'/home'">Home</a>
+        <a class="sm:pl-4 text-lg" [routerLink]="'/home'">Home</a>
 
-        <span *ngIf="token" class="flex justify-around flex-wrap">
+        <span *ngIf="token" class="hidden sm:flex sm:flex-row justify-around flex-wrap items-center">
             <a class="px-4 text-lg" [routerLink]="'add-article'">Add Article</a>
             <a class="px-4 text-lg" [routerLink]="'my-articles'">My Articles</a>
             <a class="px-4 text-lg" [routerLink]="'profile'">Profile</a>
             <button class="px-4 text-lg" type="button" (click)="logout()">Logout</button>
         </span>
+        
+        <span class="sm:hidden">
+            <img *ngIf="token" src="../../../assets/navbar.jpg" alt="cover" width="30" (click)="click = !click" 
+            class="hover:cursor-pointer grayscale">
+            <span *ngIf="token && click"  class="flex flex-col gap-3 sm:hidden justify-around flex-wrap items-center bg-[#696969] rounded-md py-3 absolute right-1 top-16 z-50 w-36 mt-1">
+                <a (click)="click = !click" class=" text-base hover:scale-110 hover:text-black hover:font-bold" [routerLink]="'add-article'">Add Article</a>
+                <a (click)="click = !click" class=" text-base hover:scale-110 hover:text-black hover:font-bold" [routerLink]="'my-articles'">My Articles</a>
+                <a (click)="click = !click" class=" text-base hover:scale-110 hover:text-black hover:font-bold" [routerLink]="'profile'">Profile</a>
+                <button class=" text-base hover:scale-110 hover:text-black hover:font-bold" type="button" (click)="logout()">Logout</button>
+            </span>
+        </span>
 
         <span *ngIf="!token" class="flex justify-around flex-wrap">
-            <a class="px-4 text-lg" [routerLink]="'login'">Login</a>
-            <a class="px-4 text-lg" [routerLink]="'register'">Register</a>
+            <a class="px-2 sm:mx-5 text-lg" [routerLink]="'login'">Login</a>
+            <a class="px-2 sm:mx-5 text-lg" [routerLink]="'register'">Register</a>
         </span>
     </nav>
 </div>

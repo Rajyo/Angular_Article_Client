@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
     this.apollo.watchQuery<any>({
       query: GET_ARTICLES
     }).valueChanges.subscribe(({data}) => {
-      //console.log(data);
+      //console.log(data.articles);
       this.articles = data.articles
     },
     errors => console.log(errors)  

@@ -8,8 +8,10 @@ import { Component } from '@angular/core';
 export class NavbarComponent  {
   token: string | null = localStorage.getItem("token") 
 
+  click: boolean = false
 
   logout() {
+    console.log("logout")
     localStorage.clear()
     window.location.href = "/login"
   }

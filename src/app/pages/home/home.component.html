@@ -1,12 +1,12 @@
-<main class="max-w-[90%] py-4 mx-auto">
-    <h1 class="text-5xl py-2 font-bold text-center">Articles</h1>
+<main class="sm:max-w-[90%] py-4 mx-auto">
+    <h1 class="text-5xl py-2 font-bold text-center">All Articles</h1>
     <p class="max-w-[60%] m-auto text-center pt-2 pb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit.
         Recusandae, doloribus ipsa quo modi deleniti expedita et autem totam esse tempore delectus magni veritatis, iste
         quam, amet perferendis voluptatem at officia.</p>
 
-    <section class="m-4 grid grid-cols-3 gap-10">
+    <section class="m-4 sm:m-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-10">
         <div class="rounded-md shadow-md shadow-gray-400" *ngFor="let article of articles">
-            <div class="flex bg-[#3cb371] p-3 rounded-t-md">
+            <div class="flex flex-wrap bg-[#3cb371] p-3 rounded-t-md">
                 <img src="../../../assets/user-icon.png" class="w-12 h-12" alt="cover">
                 <div class="ml-3">
                     <p class="text-white font-semibold">{{article.author.name}}</p>
@@ -14,8 +14,8 @@
                 </div>
             </div>
             <div class="p-3 rounded-b-md">
-                <p class="font-bold text-lg">{{article.title}}</p>
-                <p class="text-gray-600 text-sm break-words">{{article.description}}</p>
+                <p class="font-bold text-lg break-words">{{article.title}}</p>
+                <p class="text-gray-600 text-sm break-words mt-1">{{article.description}}</p>
             </div>
         </div>
     </section>
