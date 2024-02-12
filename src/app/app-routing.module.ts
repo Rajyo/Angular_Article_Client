@@ -6,6 +6,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { MyArticlesComponent } from './pages/my-articles/my-articles.component';
 import { AddArticleComponent } from './pages/add-article/add-article.component';
+import { UpdateArticleComponent } from './pages/update-article/update-article.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,9 @@ const routes: Routes = [
   },
   {
     path: "add-article", component: AddArticleComponent, title: "Add Article"
+  },
+  {
+    path: "update-article/:id", component: UpdateArticleComponent, title: "Update Article"
   },
 ];
 

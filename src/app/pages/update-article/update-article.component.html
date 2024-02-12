@@ -1,1 +1,43 @@
-<p>update-article works!</p>
+<section class='mt-12 sm:mt-20 sm:m-6 md:m-8'>
+    <h3 class="my-4 text-center text-2xl sm:text-3xl lg:text-5xl font-bold uppercase ">Update Article</h3>
+    <p class="text-center sm:mx-28 md:mx-40 lg:mx-60 px-4">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit,
+      error amet numquam iure provident voluptate esse quasi, veritatis
+      totam voluptas nostrum quisquam eum porro a pariatur veniam.
+    </p>
+  </section>
+
+  <div class='max-w-[95%] md:max-w-[90%] lg:max-w-[85%] m-auto mb-10 md:mb-28 mt-6'>
+    <section class='grid sm:grid-cols-2 gap-6'>
+      <div class='m-auto '>
+        <img src="../../../assets/user-icon.png" alt="profile" class="w-80 h-80" />
+      </div>
+
+      <form class='p-4 flex flex-col gap-4 sm:gap-0 m-auto sm:m-0' (ngSubmit)="submitUpdateArticle($event)">
+
+        <div class='flex flex-col'>
+          <span class="text-gray-500">Author Id</span>
+          <input class="pl-2 border border-gray-300 py-2 mt-1 rounded-md max-[350px]:w-48 w-72 md:w-80" type='text' 
+          value={{updateArticle.author}} disabled />
+        </div>
+
+        <div class='flex flex-col'>
+          <span class="text-gray-500">Title</span>
+          <input class="pl-2 border border-gray-300 py-2 mt-1 rounded-md max-[350px]:w-48 w-72 md:w-80" type='text' value={{updateArticle.title}} name="title" placeholder="Add title upto 20 letters" maxlength="20" name="newTitle" [(ngModel)]="title" (input)="sendNewTitleValue($event)" />
+        </div>
+        
+        <div class='flex flex-col'>
+          <span class="text-gray-500">Description</span>
+          <textarea class="pl-2 border border-gray-300 py-2 mt-1 rounded-md max-[350px]:w-48 w-72 md:w-80" type='text' value={{updateArticle.description}} maxlength="100" name="description" placeholder="Add description upto 100 letters" name="newDescription" [(ngModel)]="description" (input)="sendNewDescriptionValue($event)" onkeypress="return event.keyCode != 13;">
+          </textarea>
+        </div>
+
+        <div *ngIf="valueChange == true">
+          <button type="submit" class='max-[350px]:w-48 w-72 md:w-80 rounded-md py-2 mt-6 bg-green-500 text-white'>Submit</button>
+        </div>
+        
+
+      </form>
+
+    </section>
+  </div>

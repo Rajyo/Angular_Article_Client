@@ -7,46 +7,29 @@
     <section class="m-4 grid grid-cols-3 gap-10" *ngIf="articles.length > 0">
         <div class="rounded-md shadow-md shadow-gray-400" *ngFor="let article of articles">
 
-            <div class="flex bg-[#3cb371] p-3 rounded-t-md">
+            <div class="flex bg-[#3cb371] p-3 rounded-t-md  justify-between">
+
+                <div class="flex">
                     <img src="../../../assets/user-icon.png" class="w-12 h-12" alt="cover">
                     <div class="ml-3">
                         <p class="text-white font-semibold">{{article.author.name}}</p>
                         <p class="text-white font-semibold">&#64;{{article.author.username}}</p>
                     </div>
                 </div>
-                <div class="p-3 rounded-b-md">
-                    <p class="font-bold text-lg">{{article.title}}</p>
-                    <p class="text-gray-600 text-sm break-words">{{article.description}}</p>
+                <div class="text-white flex flex-col gap-2">
+                    <p class="rounded-md bg-[#000080] text-sm px-2 py-1 text-center hover:cursor-pointer" routerLink="/update-article/{{article._id}}" >Update</p>
+
+                    <p class="rounded-md bg-red-700 text-sm px-2 py-1 text-center hover:cursor-pointer" (click)="deleteArticle(article._id)">Delete</p>
                 </div>
+
             </div>
+            <div class="p-3 rounded-b-md">
+                <p class="font-bold text-lg">{{article.title}}</p>
+                <p class="text-gray-600 text-sm break-words">{{article.description}}</p>
+            </div>
+        </div>
     </section>
     <section class="m-4 " *ngIf="articles.length == 0">
         <h1 class="text-3xl py-2 font-bold text-center animate-pulse text-red-500">You are yet to add a Article</h1>
     </section>
 </main>
-<!-- <main class="max-w-[90%] py-4 mx-auto">
-    <h1 class="text-4xl py-2 font-bold text-center">My Articles</h1>
-    <p class="max-w-[60%] m-auto text-center pt-2 pb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Recusandae, doloribus ipsa quo modi deleniti expedita et autem totam esse tempore delectus magni veritatis, iste
-        quam, amet perferendis voluptatem at officia.</p>
-
-    <section class="m-4 grid grid-cols-3 gap-10">
-        <div class="rounded-md shadow-md shadow-gray-400" *ngFor="let article of articles">
-            <div *ngIf="article.author._id == '65c3c18755af92972c9f61a1'">
-                <div class="flex bg-[#3cb371] p-3 rounded-t-md">
-                    <img src="../../../assets/user-icon.png" class="w-12 h-12" alt="cover">
-                    <div class="ml-3">
-                        <p class="text-white font-semibold">{{article.author.name}}</p>
-                        <p class="text-white font-semibold">&#64;{{article.author.username}}</p>
-                    </div>
-                </div>
-                <div class="p-3 rounded-b-md">
-                    <p class="font-bold text-lg">{{article.title}}</p>
-                    <p class="text-gray-600 text-sm break-words">{{article.description}}</p>
-                </div>
-            </div>
-            <div *ngIf="article.author._id !== '65c3c18755af92972c9f61a1'" class="hidden">
-            </div>
-        </div>
-    </section>
-</main> -->

@@ -69,7 +69,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
 
-    if(!localStorage.getItem("useId")){
+    if(!localStorage.getItem("userId")){
       window.location.href = '/login'
     }
 

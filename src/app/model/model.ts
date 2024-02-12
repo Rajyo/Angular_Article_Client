@@ -24,6 +24,15 @@ export class UpdateUser{
     ) {}
 }
 
+export class Article{
+    constructor(
+        public _id: string = '',
+        public author: string | null = localStorage.getItem("userId"),
+        public title: string = '',
+        public description: string = ''
+    ) {}
+}
+
 export type User = {
     name: string
     email: string
