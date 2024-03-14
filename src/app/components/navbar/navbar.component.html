@@ -21,6 +21,7 @@
         </span>
 
         <span *ngIf="!token" class="flex justify-around flex-wrap">
+            <a class="px-2 sm:mx-5 text-lg" [routerLink]="'login'">Add Article</a>
             <a class="px-2 sm:mx-5 text-lg" [routerLink]="'login'">Login</a>
             <a class="px-2 sm:mx-5 text-lg" [routerLink]="'register'">Register</a>
         </span>

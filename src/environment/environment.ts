@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    BACKEND_URL:'http://localhost:4000/graphql'
+    BACKEND_URL:'https//localhost:4000/graphql'
 }
