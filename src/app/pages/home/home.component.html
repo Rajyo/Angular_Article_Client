@@ -1,21 +1,26 @@
-<main class="sm:max-w-[90%] py-4 m-auto relative">
+<main class="sm:max-w-[90%] m-auto relative">
     <h1 class="text-5xl py-2 font-bold text-center">All Articles</h1>
     <p class="max-w-[60%] m-auto text-center pt-2 pb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit.
         Recusandae, doloribus ipsa quo modi deleniti expedita et autem totam esse tempore delectus magni veritatis, iste
         quam, amet perferendis voluptatem at officia.</p>
 
 
-    <div class="absolute z-10 w-full max-h-screen" *ngIf="articles.length == 0">
-        <section
-            class="bg-black w-[90%] sm:w-[75%] md:w-[60%] lg:w-[50%] m-auto flex flex-col gap-6 p-4 sm:p-8 md:p-10 lg:p-16 rounded-md text-white">
-
-            <h1 class="text-center font-bold text-3xl text-red-600">IMPORTANT!</h1>
-            <h1>You are seeing this message because the Backend Server is hosted on RENDER's FREE Tier Web Service and
-                it spin down after 15 minutes of inactivity.</h1>
-            <h1>Since there are no active users and I am using a Free Service, the first request might take longer to
-                respond.</h1>
-            <h1 class="uppercase text-center text-xl font-bold sm:mt-10 text-blue-500">So please refresh the page and wait for 20-30 seconds.</h1>
-
+    <div *ngIf="articles.length == 0">
+        <section class="m-4 sm:m-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-10">
+            <div class="rounded-md shadow-md shadow-gray-400" *ngFor="let n of numSequence(6)">
+                <div class="flex flex-wrap bg-[#3cb371] p-3 rounded-t-md">
+                    <p class="w-12 h-12 bg-gray-200 rounded-full"></p>
+                    <div class="ml-3">
+                        <p class="bg-gray-200 p-2 w-32 rounded-md"></p>
+                        <p class="bg-gray-200 p-2 mt-2 w-20 rounded-md"></p>
+                    </div>
+                </div>
+                <div class="p-3 my-1 rounded-b-md">
+                    <p class="bg-gray-200 w-32 p-2.5 rounded-md"></p>
+                    <p class="bg-gray-200 mt-2.5 p-2 rounded-md"></p>
+                    <p class="bg-gray-200 p-2 mt-1 rounded-md"></p>
+                </div>
+            </div>
         </section>
     </div>
 

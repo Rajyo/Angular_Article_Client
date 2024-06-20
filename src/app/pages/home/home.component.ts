@@ -26,16 +26,19 @@ export class HomeComponent implements OnInit {
 
   articles: ArticleData[] = [];
 
-  constructor(private apollo: Apollo) {}
+  constructor(private apollo: Apollo) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.apollo.watchQuery<any>({
       query: GET_ARTICLES
-    }).valueChanges.subscribe(({data}) => {
+    }).valueChanges.subscribe(({ data }) => {
       //console.log(data.articles);
       this.articles = data.articles
     },
-    errors => console.log(errors)  
+      errors => console.log(errors)
     )
+  }
+  numSequence(n: number): Array<number> {
+    return Array(n);
   }
 }
